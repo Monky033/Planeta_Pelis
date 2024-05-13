@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
       detallePelicula.style.display = "none";
     } else {
       console.log(
-        "El contenedor de detalles de la película no se encontró en el documento."
+        "no esta el elemento capo"
       );
     }
   }

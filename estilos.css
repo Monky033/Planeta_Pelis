@@ -9,6 +9,7 @@ body {
   background: #1d1d1d;
   color: #dbdbdb;
 }
+
 .portada {
   background: #100a1f;
   color: #e0e0e0;
@@ -75,6 +76,7 @@ body {
 
 .contenedor .pelicula {
   text-align: center;
+  position: relative; /* Posicionamiento relativo para contener detalles */
 }
 
 .contenedor .pelicula .titulo {
@@ -86,6 +88,22 @@ body {
   width: 100%;
   margin-bottom: 10px;
   border-radius: 15px;
+}
+
+.detalles-pelicula {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(48, 48, 48, 0.9);
+  padding: 10px;
+  border-radius: 15px;
+
+  z-index: 1; /* Asegúrate de que esté por encima de la imagen */
+}
+
+.contenedor .pelicula:hover .detalles-pelicula {
+  display: block; /* Mostrar detalles cuando se pasa el mouse sobre la imagen */
 }
 
 .paginacion {

@@ -76,7 +76,7 @@ body {
 
 .contenedor .pelicula {
   text-align: center;
-  position: relative; /* Posicionamiento relativo para contener detalles */
+  position: relative; 
 }
 
 .contenedor .pelicula .titulo {
@@ -99,11 +99,11 @@ body {
   padding: 10px;
   border-radius: 15px;
 
-  z-index: 1; /* Asegúrate de que esté por encima de la imagen */
+  z-index: 1; 
 }
 
 .contenedor .pelicula:hover .detalles-pelicula {
-  display: block; /* Mostrar detalles cuando se pasa el mouse sobre la imagen */
+  display: block; 
 }
 
 .paginacion {

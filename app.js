@@ -38,16 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Si el input contiene un nombre, realizar la búsqueda por nombre
         url = `https://api.themoviedb.org/3/search/movie?api_key=192e0b9821564f26f52949758ea3c473&language=es-MX&page=${pagina}&query=${nombre}`;
       }
-
       const respuesta = await fetch(url);
 
       if (respuesta.status === 200) {
         const datos = await respuesta.json();
-
         let peliculas = "";
         datos.results.forEach((pelicula) => {
-          const peliculaId = pelicula.id; // ID único de la película
-
+          const peliculaId = pelicula.id; 
           peliculas += `
           <div class="pelicula" id="pelicula-${peliculaId}">
             <img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" data-pelicula-id="${peliculaId}">
@@ -63,23 +60,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("contenedor").innerHTML = peliculas;
 
-        // Obtener todas las imágenes de películas
         const imagenesPeliculas = document.querySelectorAll(".poster");
 
-        // Agregar evento de mouseover a cada imagen de película
         imagenesPeliculas.forEach((imagen) => {
           imagen.addEventListener("mouseover", async () => {
-            // Obtener el ID de la película de la imagen
+           
             const peliculaId = imagen.dataset.peliculaId;
-
-            // Hacer la solicitud a la API para obtener los detalles de la película
+   
             const detalles = await obtenerDetallesPelicula(peliculaId);
 
-            // Mostrar los detalles en el contenedor emergente
             mostrarDetallesPelicula(detalles);
           });
-
-          // Agregar evento de mouseout para ocultar los detalles cuando el mouse deja la imagen
           imagen.addEventListener("mouseout", () => {
             ocultarDetallesPelicula();
           });
@@ -102,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarPeliculas(nombre);
   };
 
-  // Función para obtener los detalles de la película desde la API
+  
   async function obtenerDetallesPelicula(peliculaId) {
     const url = `https://api.themoviedb.org/3/movie/${peliculaId}?api_key=192e0b9821564f26f52949758ea3c473&language=es-MX`;
     const respuesta = await fetch(url);
@@ -110,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return datos;
   }
 
-  // Función para mostrar los detalles de la película en el contenedor emergente
+
   function mostrarDetallesPelicula(detalles) {
     const detallePelicula = document.getElementById("detallesPelicula");
     if (detallePelicula) {
@@ -127,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Función para ocultar los detalles de la película
+ 
   function ocultarDetallesPelicula() {
     const detallePelicula = document.getElementById("detallesPelicula");
     if (detallePelicula) {

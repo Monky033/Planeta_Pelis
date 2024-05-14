@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cargarPeliculas(terminoBusqueda);
     }
   });
-
+ 
   // Buscador
   btnBuscar.addEventListener("click", () => {
     pagina = 1;

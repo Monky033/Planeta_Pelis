@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cargarPeliculas(terminoBusqueda);
     }
   });
+  
  
   btnAnterior.addEventListener("click", () => {
     if (pagina > 1) {

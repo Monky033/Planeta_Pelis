@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>${detalles.overview}</p>
         <p>Rating: ${detalles.vote_average}</p>
       `;
-      detallePelicula.style.display = "block"; // Cambia a "block" para mostrar los detalles
+      detallePelicula.style.display = "block"; 
     } else {
       console.log(
         "El contenedor de detalles de la película no se encontró en el documento."
